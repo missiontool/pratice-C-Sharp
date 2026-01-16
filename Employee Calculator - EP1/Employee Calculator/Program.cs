@@ -81,9 +81,28 @@ internal class Program
         //Console.WriteLine(sbBuilder.ToString());
 
         // 3.非同步寫入檔案
-        Console.WriteLine("正在寫入檔案");
-        await File.WriteAllTextAsync(filePath, finalReport);
-
-        Console.WriteLine($"寫入完成！路徑：{filePath}");
+        try
+        {
+            // 這裡是「高風險區」：跟檔案、網路、資料庫溝通都算
+            Console.WriteLine("正在寫入檔案...");
+            await File.WriteAllTextAsync(filePath, finalReport);
+            Console.WriteLine($"寫入完成！路徑：{filePath}");
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            // 專門抓「沒有權限」的錯
+            Console.WriteLine($"寫入失敗！權限不足，請以管理員身分執行。錯誤訊息：{ex.Message}");
+        }
+        catch (IOException ex)
+        {
+            // 專門抓「硬碟滿了」或「檔案被佔用」的錯
+            Console.WriteLine($"寫入失敗！硬碟錯誤或檔案被佔用。錯誤訊息：{ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            // 這是最後一道防線，抓所有漏網之魚
+            // 在真實工作中，我們通常會在這裡寫 Log (記錄錯誤日誌)
+            Console.WriteLine($"發生未預期的錯誤：{ex.Message}");
+        }
     }
 }
