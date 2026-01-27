@@ -10,3 +10,5 @@
 
 [【擺脫AI的束縛 Ep.4】加入Service來分攤Controller的超額工作量吧](https://medium.com/@missiontoolshare/%E6%93%BA%E8%84%ABai%E7%9A%84%E6%9D%9F%E7%B8%9B-ep-4-%E5%8A%A0%E5%85%A5service%E4%BE%86%E5%88%86%E6%94%A4controller%E7%9A%84%E8%B6%85%E9%A1%8D%E5%B7%A5%E4%BD%9C%E9%87%8F%E5%90%A7-e41fe35f075e)
 
+[【擺脫AI的束縛 Ep.5】透過AutoMapper來自動搬運DTO賦值](https://medium.com/@missiontoolshare/%E6%93%BA%E8%84%ABai%E7%9A%84%E6%9D%9F%E7%B8%9B-ep-5-%E9%80%8F%E9%81%8Eautomapper%E4%BE%86%E8%87%AA%E5%8B%95%E6%90%AC%E9%81%8Bdto%E8%B3%A6%E5%80%BC-b3f70b42c605)
+
